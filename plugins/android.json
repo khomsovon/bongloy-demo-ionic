@@ -1,0 +1,36 @@
+{
+  "prepare_queue": {
+    "installed": [],
+    "uninstalled": []
+  },
+  "config_munge": {
+    "files": {}
+  },
+  "installed_plugins": {
+    "cordova-plugin-cocoapod-support": {
+      "PACKAGE_NAME": "com.bongloy.ionic"
+    },
+    "cordova-plugin-device": {
+      "PACKAGE_NAME": "com.bongloy.ionic"
+    },
+    "cordova-plugin-ionic-webview": {
+      "PACKAGE_NAME": "com.bongloy.ionic"
+    },
+    "cordova-plugin-splashscreen": {
+      "PACKAGE_NAME": "com.bongloy.ionic"
+    },
+    "cordova-plugin-statusbar": {
+      "PACKAGE_NAME": "com.bongloy.ionic"
+    },
+    "cordova-plugin-stripe": {
+      "PACKAGE_NAME": "com.bongloy.ionic"
+    },
+    "cordova-plugin-whitelist": {
+      "PACKAGE_NAME": "com.bongloy.ionic"
+    },
+    "ionic-plugin-keyboard": {
+      "PACKAGE_NAME": "com.bongloy.ionic"
+    }
+  },
+  "dependent_plugins": {}
+}

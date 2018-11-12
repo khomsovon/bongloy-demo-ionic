@@ -1,0 +1,11 @@
+{
+	"pods": {
+		"Stripe": {
+			"type": "pod",
+			"id": "Stripe"
+		}
+	},
+	"sources": {},
+	"iosMinVersion": "9.0",
+	"useFrameworks": true
+}

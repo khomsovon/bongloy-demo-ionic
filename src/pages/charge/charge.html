@@ -1,0 +1,40 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>
+      <img src="assets/imgs/bongloy_logo.png"/>
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+<ion-content padding>
+  <div padding-bottom class="card-container"></div>
+  <form card container=".card-container"
+  #cardForm="ngForm"
+  (ngSubmit)="createCardToken(cardForm)"
+  [formGroup]="form"
+  [messages]="messages"
+  [placeholders]="placeholders"
+  [masks]="masks"
+  formatting="false"
+  debug="true">
+      <div class="form-group">
+        <input type="tel" class="form-control" placeholder="Card number" formControlName="number"
+        [(ngModel)]="cardForm.number" name="number" card-number/>
+      </div>
+      <div class="form-group">
+        <input class="form-control" autocomplete="off" type="text" formControlName="name"
+        placeholder="Name on card" [(ngModel)]="cardForm.name" name="name" card-name/>
+      </div>
+      <div class="form-group">
+        <input width-68 class="form-inline" type="tel" formControlName="expiry"
+        placeholder="Expiry" [(ngModel)]="cardForm.expiry" name="expiry" card-expiry/>
+        <input width-30 class="form-inline" type="tel" formControlName="cvc"
+        placeholder="CVC" [(ngModel)]="cardForm.cvc" name="cvc" card-cvc>
+      </div>
+      <div class="form-group">
+        <input width-68 class="form-inline" autocomplete="off" type="tel" formControlName="amount"
+        placeholder="Amount" [(ngModel)]="cardForm.amount" name="amount" card-amount/>
+        <input width-30 class="form-inline" disabled type="text" value="USD">
+      </div>
+    <button [disabled]="!form.valid" type="submit" ion-button outline color="secondary" block>Buy</button>
+  </form>
+</ion-content>
