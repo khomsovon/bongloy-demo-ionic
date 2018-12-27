@@ -1,15 +1,13 @@
 # Cordova Stripe Plugin
-A Cordova plugin that lets you use Stripe Native SDKs for Android, iOS and Browser.
+A Cordova plugin that lets you use Bongloy Native SDKs for Android, iOS.
 
-[![npm](https://img.shields.io/npm/l/express.svg)](https://www.npmjs.com/package/cordova-plugin-stripe)
-
-[![NPM](https://nodei.co/npm/cordova-plugin-stripe.png?stars&downloads)](https://nodei.co/npm/cordova-plugin-stripe/)
-[![NPM](https://nodei.co/npm-dl/cordova-plugin-stripe.png?months=6&height=2)](https://nodei.co/npm/cordova-plugin-stripe/)
-
+[![npm](https://img.shields.io/npm/l/cordova-plugin-stripe.svg)](https://www.npmjs.com/package/cordova-plugin-stripe/)
+[![npm](https://img.shields.io/npm/dt/cordova-plugin-stripe.svg)](https://www.npmjs.com/package/cordova-plugin-stripe)
+[![npm](https://img.shields.io/npm/dm/cordova-plugin-stripe.svg)](https://www.npmjs.com/package/cordova-plugin-stripe)
 
 ## Installation
 ```shell
-cordova plugin add cordova-plugin-stripe
+cordova plugin add https://github.com/khomsovon/cordova-plugin-stripe.git 
 ```
 
 <br>
@@ -36,7 +34,7 @@ var card = {
   address_city: 'Toronto', // city (optional)
   address_state: 'Ontario', // state/province (optional)
   address_country: 'Canada', // country (optional)
-  postal_code: 'L5L5L5', // Postal Code / Zip Code (optional)
+  postalCode: 'L5L5L5', // Postal Code / Zip Code (optional)
   currency: 'CAD' // Three-letter ISO currency code (optional)
 };
 
@@ -221,7 +219,7 @@ Parameters to create a credit card token
 | address_city | <code>string</code> | Address line 2 |
 | address_state | <code>string</code> | State/Province |
 | address_country | <code>string</code> | Country |
-| postal_code | <code>string</code> | Postal/Zip code |
+| postalCode | <code>string</code> | Postal/Zip code |
 | currency | <code>string</code> | 3-letter code for currency |
 
 <a name="module_stripe.BankAccountTokenParams"></a>

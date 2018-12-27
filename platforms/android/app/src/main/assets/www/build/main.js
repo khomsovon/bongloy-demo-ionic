@@ -1,6 +1,6 @@
 webpackJsonp([0],{
 
-/***/ 161:
+/***/ 160:
 /***/ (function(module, exports) {
 
 function webpackEmptyAsyncContext(req) {
@@ -13,11 +13,11 @@ function webpackEmptyAsyncContext(req) {
 webpackEmptyAsyncContext.keys = function() { return []; };
 webpackEmptyAsyncContext.resolve = webpackEmptyAsyncContext;
 module.exports = webpackEmptyAsyncContext;
-webpackEmptyAsyncContext.id = 161;
+webpackEmptyAsyncContext.id = 160;
 
 /***/ }),
 
-/***/ 207:
+/***/ 206:
 /***/ (function(module, exports) {
 
 function webpackEmptyAsyncContext(req) {
@@ -30,18 +30,18 @@ function webpackEmptyAsyncContext(req) {
 webpackEmptyAsyncContext.keys = function() { return []; };
 webpackEmptyAsyncContext.resolve = webpackEmptyAsyncContext;
 module.exports = webpackEmptyAsyncContext;
-webpackEmptyAsyncContext.id = 207;
+webpackEmptyAsyncContext.id = 206;
 
 /***/ }),
 
-/***/ 252:
+/***/ 251:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return HomePage; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return ChargePage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(1);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(65);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ionic_native_stripe__ = __webpack_require__(134);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(87);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ionic_native_stripe__ = __webpack_require__(252);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__angular_forms__ = __webpack_require__(25);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_payment__ = __webpack_require__(395);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_payment___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_4_payment__);
@@ -64,8 +64,8 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 
 
-var HomePage = (function () {
-    function HomePage(navCtrl, navParams, formBuilder, charge, stripe) {
+var ChargePage = (function () {
+    function ChargePage(navCtrl, navParams, formBuilder, charge, stripe) {
         this.navCtrl = navCtrl;
         this.navParams = navParams;
         this.formBuilder = formBuilder;
@@ -80,7 +80,7 @@ var HomePage = (function () {
             'cvc': ['', __WEBPACK_IMPORTED_MODULE_3__angular_forms__["f" /* Validators */].required]
         });
     }
-    HomePage.prototype.createCardToken = function (cardForm) {
+    ChargePage.prototype.createCardToken = function (cardForm) {
         var _this = this;
         this.stripe.setPublishableKey(this.publishableKey);
         var expiry = __WEBPACK_IMPORTED_MODULE_4_payment___default.a.fns.cardExpiryVal(cardForm.expiry);
@@ -92,18 +92,15 @@ var HomePage = (function () {
         };
         this.stripe.createCardToken(card)
             .then(function (token) {
-            _this.charge.Charge(token, cardForm.amount)
+            _this.charge.Charge(token.id, cardForm.amount)
                 .subscribe(function (data) {
                 _this.message(data, 'success');
-            }, function (error) {
-                console.log(error);
-                _this.message(error, 'error');
             });
         }).catch(function (error) {
             _this.message(error, 'error');
         });
     };
-    HomePage.prototype.message = function (response, messageType) {
+    ChargePage.prototype.message = function (response, messageType) {
         __WEBPACK_IMPORTED_MODULE_5_sweetalert2___default()({
             type: messageType,
             width: 250,
@@ -112,7 +109,7 @@ var HomePage = (function () {
             confirmButtonColor: '#3085d6'
         });
     };
-    HomePage.prototype.messageText = function (type) {
+    ChargePage.prototype.messageText = function (type) {
         if (type == 'success') {
             return 'Payment successful!';
         }
@@ -120,20 +117,20 @@ var HomePage = (function () {
             return 'Payment unsuccessful!';
         }
     };
-    HomePage = __decorate([
+    ChargePage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-            selector: 'page-home',template:/*ion-inline-start:"/Users/khomsovon/Documents/app/bongloy-demo-ionic/src/pages/home/home.html"*/'<ion-header>\n  <ion-navbar>\n    <ion-title>\n      <img src="assets/imgs/bongloy_logo.png"/>\n    </ion-title>\n  </ion-navbar>\n</ion-header>\n<ion-content padding>\n  <div padding-bottom class="card-container"></div>\n  <form card container=".card-container"\n  #cardForm="ngForm"\n  (ngSubmit)="createCardToken(cardForm)"\n  [formGroup]="form"\n  [messages]="messages"\n  [placeholders]="placeholders"\n  [masks]="masks"\n  formatting="false"\n  debug="true">\n      <div class="form-group">\n        <input type="tel" class="form-control" placeholder="Card number" formControlName="number"\n        [(ngModel)]="cardForm.number" name="number" card-number/>\n      </div>\n      <div class="form-group">\n        <input class="form-control" autocomplete="off" type="text" formControlName="name"\n        placeholder="Name on card" [(ngModel)]="cardForm.name" name="name" card-name/>\n      </div>\n      <div class="form-group">\n        <input width-68 class="form-inline" type="tel" formControlName="expiry"\n        placeholder="Expiry" [(ngModel)]="cardForm.expiry" name="expiry" card-expiry/>\n        <input width-30 class="form-inline" type="tel" formControlName="cvc"\n        placeholder="CVC" [(ngModel)]="cardForm.cvc" name="cvc" card-cvc>\n      </div>\n      <div class="form-group">\n        <input width-68 class="form-inline" autocomplete="off" type="tel" formControlName="amount"\n        placeholder="Amount" [(ngModel)]="cardForm.amount" name="amount" card-amount/>\n        <input width-30 class="form-inline" disabled type="text" value="USD">\n      </div>\n    <button [disabled]="!form.valid" type="submit" ion-button outline color="secondary" block>Buy</button>\n  </form>\n</ion-content>\n'/*ion-inline-end:"/Users/khomsovon/Documents/app/bongloy-demo-ionic/src/pages/home/home.html"*/
+            selector: 'page-charge',template:/*ion-inline-start:"/Users/khomsovon/Documents/app/bongloy-demo-ionic/src/pages/charge/charge.html"*/'<ion-header>\n  <ion-navbar>\n    <ion-title>\n      <img src="assets/imgs/bongloy_logo.png"/>\n    </ion-title>\n  </ion-navbar>\n</ion-header>\n<ion-content padding>\n  <div padding-bottom class="card-container"></div>\n  <form card container=".card-container"\n  #cardForm="ngForm"\n  (ngSubmit)="createCardToken(cardForm)"\n  [formGroup]="form"\n  [messages]="messages"\n  [placeholders]="placeholders"\n  [masks]="masks"\n  formatting="false"\n  debug="true">\n      <div class="form-group">\n        <input type="tel" class="form-control" placeholder="Card number" formControlName="number"\n        [(ngModel)]="cardForm.number" name="number" card-number/>\n      </div>\n      <div class="form-group">\n        <input class="form-control" autocomplete="off" type="text" formControlName="name"\n        placeholder="Name on card" [(ngModel)]="cardForm.name" name="name" card-name/>\n      </div>\n      <div class="form-group">\n        <input width-68 class="form-inline" type="tel" formControlName="expiry"\n        placeholder="Expiry" [(ngModel)]="cardForm.expiry" name="expiry" card-expiry/>\n        <input width-30 class="form-inline" type="tel" formControlName="cvc"\n        placeholder="CVC" [(ngModel)]="cardForm.cvc" name="cvc" card-cvc>\n      </div>\n      <div class="form-group">\n        <input width-68 class="form-inline" autocomplete="off" type="tel" formControlName="amount"\n        placeholder="Amount" [(ngModel)]="cardForm.amount" name="amount" card-amount/>\n        <input width-30 class="form-inline" disabled type="text" value="USD">\n      </div>\n    <button [disabled]="!form.valid" type="submit" ion-button outline color="secondary" block>Buy</button>\n  </form>\n</ion-content>\n'/*ion-inline-end:"/Users/khomsovon/Documents/app/bongloy-demo-ionic/src/pages/charge/charge.html"*/
         }),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["d" /* NavController */],
             __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["e" /* NavParams */],
             __WEBPACK_IMPORTED_MODULE_3__angular_forms__["a" /* FormBuilder */],
             __WEBPACK_IMPORTED_MODULE_6__providers_ChargeProvider__["a" /* ChargeProvider */],
             __WEBPACK_IMPORTED_MODULE_2__ionic_native_stripe__["a" /* Stripe */]])
-    ], HomePage);
-    return HomePage;
+    ], ChargePage);
+    return ChargePage;
 }());
 
-//# sourceMappingURL=home.js.map
+//# sourceMappingURL=charge.js.map
 
 /***/ }),
 
@@ -143,7 +140,7 @@ var HomePage = (function () {
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return ChargeProvider; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(1);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_http__ = __webpack_require__(162);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_http__ = __webpack_require__(161);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_map__ = __webpack_require__(254);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_map___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_map__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_rxjs_Rx__ = __webpack_require__(398);
@@ -167,19 +164,19 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 var ChargeProvider = (function () {
     function ChargeProvider(http) {
         this.http = http;
-        this.BACKEND_BASE_URL = 'https://bongloy-demo-laravel.herokuapp.com/';
+        this.BASE_URL = "https://bongloy-demo-laravel.herokuapp.com/";
     }
     ChargeProvider.prototype.Charge = function (token, amount) {
-        var params = {
-            token: token,
-            amount: amount,
-            currency: 'USD'
+        var body = {
+            'token': token,
+            'amount': amount,
+            'currency': 'USD'
         };
-        return this.http.post(this.BACKEND_BASE_URL + "charge", params)
+        return this.http.post(this.BASE_URL + "charge", body)
             .map(function (response) {
             var data = response.json();
             return data;
-        });
+        }).catch(this.handleError);
     };
     ChargeProvider.prototype.handleError = function (error) {
         return __WEBPACK_IMPORTED_MODULE_4_rxjs_Observable__["Observable"].throw(error.json().error || 'Server error');
@@ -216,23 +213,21 @@ Object(__WEBPACK_IMPORTED_MODULE_0__angular_platform_browser_dynamic__["a" /* pl
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return AppModule; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_platform_browser__ = __webpack_require__(39);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_core__ = __webpack_require__(1);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_http__ = __webpack_require__(162);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_ionic_angular__ = __webpack_require__(65);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__ionic_native_splash_screen__ = __webpack_require__(247);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__ionic_native_status_bar__ = __webpack_require__(251);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_http__ = __webpack_require__(161);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_ionic_angular__ = __webpack_require__(87);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__ionic_native_splash_screen__ = __webpack_require__(246);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__ionic_native_status_bar__ = __webpack_require__(250);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__app_component__ = __webpack_require__(394);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__pages_home_home__ = __webpack_require__(252);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__pages_stripe_native_stripe_native__ = __webpack_require__(678);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9_ngx_card_ngx_card__ = __webpack_require__(679);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__ionic_native_stripe__ = __webpack_require__(134);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__providers_ChargeProvider__ = __webpack_require__(253);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__pages_charge_charge__ = __webpack_require__(251);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8_ngx_card_ngx_card__ = __webpack_require__(678);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__ionic_native_stripe__ = __webpack_require__(252);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__providers_ChargeProvider__ = __webpack_require__(253);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
     else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
-
 
 
 
@@ -251,13 +246,12 @@ var AppModule = (function () {
         Object(__WEBPACK_IMPORTED_MODULE_1__angular_core__["I" /* NgModule */])({
             declarations: [
                 __WEBPACK_IMPORTED_MODULE_6__app_component__["a" /* MyApp */],
-                __WEBPACK_IMPORTED_MODULE_7__pages_home_home__["a" /* HomePage */],
-                __WEBPACK_IMPORTED_MODULE_8__pages_stripe_native_stripe_native__["a" /* StripeNativePage */]
+                __WEBPACK_IMPORTED_MODULE_7__pages_charge_charge__["a" /* ChargePage */]
             ],
             imports: [
                 __WEBPACK_IMPORTED_MODULE_2__angular_http__["b" /* HttpModule */],
                 __WEBPACK_IMPORTED_MODULE_0__angular_platform_browser__["a" /* BrowserModule */],
-                __WEBPACK_IMPORTED_MODULE_9_ngx_card_ngx_card__["a" /* CardModule */],
+                __WEBPACK_IMPORTED_MODULE_8_ngx_card_ngx_card__["a" /* CardModule */],
                 __WEBPACK_IMPORTED_MODULE_3_ionic_angular__["c" /* IonicModule */].forRoot(__WEBPACK_IMPORTED_MODULE_6__app_component__["a" /* MyApp */], {}, {
                     links: []
                 })
@@ -265,14 +259,13 @@ var AppModule = (function () {
             bootstrap: [__WEBPACK_IMPORTED_MODULE_3_ionic_angular__["a" /* IonicApp */]],
             entryComponents: [
                 __WEBPACK_IMPORTED_MODULE_6__app_component__["a" /* MyApp */],
-                __WEBPACK_IMPORTED_MODULE_7__pages_home_home__["a" /* HomePage */],
-                __WEBPACK_IMPORTED_MODULE_8__pages_stripe_native_stripe_native__["a" /* StripeNativePage */]
+                __WEBPACK_IMPORTED_MODULE_7__pages_charge_charge__["a" /* ChargePage */]
             ],
             providers: [
                 __WEBPACK_IMPORTED_MODULE_5__ionic_native_status_bar__["a" /* StatusBar */],
                 __WEBPACK_IMPORTED_MODULE_4__ionic_native_splash_screen__["a" /* SplashScreen */],
-                __WEBPACK_IMPORTED_MODULE_11__providers_ChargeProvider__["a" /* ChargeProvider */],
-                __WEBPACK_IMPORTED_MODULE_10__ionic_native_stripe__["a" /* Stripe */],
+                __WEBPACK_IMPORTED_MODULE_10__providers_ChargeProvider__["a" /* ChargeProvider */],
+                __WEBPACK_IMPORTED_MODULE_9__ionic_native_stripe__["a" /* Stripe */],
                 { provide: __WEBPACK_IMPORTED_MODULE_1__angular_core__["u" /* ErrorHandler */], useClass: __WEBPACK_IMPORTED_MODULE_3_ionic_angular__["b" /* IonicErrorHandler */] }
             ]
         })
@@ -290,10 +283,10 @@ var AppModule = (function () {
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return MyApp; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(1);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(65);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ionic_native_status_bar__ = __webpack_require__(251);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__ionic_native_splash_screen__ = __webpack_require__(247);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__pages_home_home__ = __webpack_require__(252);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(87);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ionic_native_status_bar__ = __webpack_require__(250);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__ionic_native_splash_screen__ = __webpack_require__(246);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__pages_charge_charge__ = __webpack_require__(251);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -310,7 +303,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 var MyApp = (function () {
     function MyApp(platform, statusBar, splashScreen) {
-        this.rootPage = __WEBPACK_IMPORTED_MODULE_4__pages_home_home__["a" /* HomePage */];
+        this.rootPage = __WEBPACK_IMPORTED_MODULE_4__pages_charge_charge__["a" /* ChargePage */];
         platform.ready().then(function () {
             // Okay, so the platform is ready and our plugins are available.
             // Here you can do any higher level native things you might need.
@@ -327,64 +320,6 @@ var MyApp = (function () {
 }());
 
 //# sourceMappingURL=app.component.js.map
-
-/***/ }),
-
-/***/ 678:
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return StripeNativePage; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(1);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(65);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ionic_native_stripe__ = __webpack_require__(134);
-var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
-    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
-    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
-    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
-    return c > 3 && r && Object.defineProperty(target, key, r), r;
-};
-var __metadata = (this && this.__metadata) || function (k, v) {
-    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
-};
-
-
-
-var StripeNativePage = (function () {
-    function StripeNativePage(navCtrl, navParams, stripe) {
-        this.navCtrl = navCtrl;
-        this.navParams = navParams;
-        this.stripe = stripe;
-    }
-    StripeNativePage.prototype.ionViewDidLoad = function () {
-        this.stripe.setPublishableKey('pk_test_ad251ef6dcf08a4ee27af892d1210f4a3108984e7e20f57220fba03d7adbff78');
-    };
-    StripeNativePage.prototype.splitExpiry = function () {
-    };
-    StripeNativePage.prototype.validateCard = function () {
-        var card = {
-            number: this.cardNumber,
-            expMonth: this.cardMonth,
-            expYear: this.cardYear,
-            cvc: this.cardCVV
-        };
-        // Run card validation here and then attempt to tokenise
-        this.stripe.createCardToken(card)
-            .then(function (token) {
-            alert(token.id);
-        })
-            .catch(function (error) { return console.error(error); });
-    };
-    StripeNativePage = __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-            selector: 'page-stripe-native',template:/*ion-inline-start:"/Users/khomsovon/Documents/app/bongloy-demo-ionic/src/pages/stripe-native/stripe-native.html"*/'<ion-header>\n\n  <ion-navbar>\n    <ion-title>Native</ion-title>\n  </ion-navbar>\n\n</ion-header>\n\n\n<ion-content>\n\n<ion-list>\n\n  <ion-item>\n    <ion-label color="primary" stacked>Card Number</ion-label>\n    <ion-input type="text" placeholder="Enter your 16 digit card number" \n    [(ngModel)]="cardNumber"></ion-input>\n  </ion-item>\n\n  <ion-item>\n    <ion-label color="primary" stacked>Expiration Month</ion-label>\n    <ion-input type="number" placeholder="Enter your card expiration month"\n    [(ngModel)]="cardMonth"></ion-input>\n  </ion-item>\n\n  <ion-item>\n    <ion-label color="primary" stacked>Expiration Year</ion-label>\n    <ion-input type="number" placeholder="Enter your card expiration year"\n    [(ngModel)]="cardYear"></ion-input>\n  </ion-item>\n\n  <ion-item>\n    <ion-label color="primary" stacked>CVV</ion-label>\n    <ion-input type="number" placeholder="Enter your CVV"\n    [(ngModel)]="cardCVV"></ion-input>\n  </ion-item>\n\n</ion-list>\n\n\n  <button ion-button block large (click)="validateCard()">Add Card</button>\n\n</ion-content>\n'/*ion-inline-end:"/Users/khomsovon/Documents/app/bongloy-demo-ionic/src/pages/stripe-native/stripe-native.html"*/,
-        }),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["d" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["e" /* NavParams */], __WEBPACK_IMPORTED_MODULE_2__ionic_native_stripe__["a" /* Stripe */]])
-    ], StripeNativePage);
-    return StripeNativePage;
-}());
-
-//# sourceMappingURL=stripe-native.js.map
 
 /***/ })
 

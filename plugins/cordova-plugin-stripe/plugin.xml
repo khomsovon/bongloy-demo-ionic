@@ -9,18 +9,20 @@
 
         <config-file target="res/xml/config.xml" parent="/*">
             <feature name="CordovaStripe">
-                <param name="android-package" value="com.zyramedia.cordova.stripe.CordovaStripe" />
+              <!--<param name="android-package" value="com.zyramedia.cordova.stripe.CordovaStripe" />-->
+              <param name="android-package" value="com.zyramedia.cordova.stripe.CordovaStripe" />
             </feature>
         </config-file>
 
         <source-file src="src/android/CordovaStripe.java" target-dir="src/com/zyramedia/cordova/stripe" />
-	<framework src="com.stripe:stripe-android:4.1.2" />
+        <source-file src="src/android/BongloyApiHandler.java" target-dir="src/com/stripe/android" />
+        <source-file src="src/android/Bongloy.java" target-dir="src/com/stripe/android" />
+        <framework src="com.stripe:stripe-android:8.1.0" />
 
     </platform>
 
     <platform name="ios">
-
-        <pods-config ios-min-version="9.0" use-frameworks="true"/>
+        <dependency id="cordova-plugin-cocoapod-support"/>
 
         <config-file target="config.xml" parent="/*">
             <feature name="CordovaStripe">
@@ -28,11 +30,12 @@
             </feature>
         </config-file>
 
+        <header-file src="src/ios/BongloyAPIClient.h" />
+        <source-file src="src/ios/BongloyAPIClient.m" />
+
         <header-file src="src/ios/CordovaStripe.h" />
         <source-file src="src/ios/CordovaStripe.m" />
 
-        <!--<framework src="src/ios/Stripe.framework" custom="true" />-->
-        <!-- Add the latest version of Stripe -->
         <pod id="Stripe" />
 
     </platform>

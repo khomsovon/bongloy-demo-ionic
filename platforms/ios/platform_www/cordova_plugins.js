@@ -33,14 +33,6 @@ module.exports = [
     ]
   },
   {
-    "id": "cordova-plugin-stripe.stripe",
-    "file": "plugins/cordova-plugin-stripe/www/CordovaStripe.js",
-    "pluginId": "cordova-plugin-stripe",
-    "clobbers": [
-      "cordova.plugins.stripe"
-    ]
-  },
-  {
     "id": "ionic-plugin-keyboard.keyboard",
     "file": "plugins/ionic-plugin-keyboard/www/ios/keyboard.js",
     "pluginId": "ionic-plugin-keyboard",
@@ -48,19 +40,27 @@ module.exports = [
       "cordova.plugins.Keyboard"
     ],
     "runs": true
+  },
+  {
+    "id": "cordova-plugin-stripe.stripe",
+    "file": "plugins/cordova-plugin-stripe/www/CordovaStripe.js",
+    "pluginId": "cordova-plugin-stripe",
+    "clobbers": [
+      "cordova.plugins.stripe"
+    ]
   }
 ];
 module.exports.metadata = 
 // TOP OF METADATA
 {
-  "cordova-plugin-cocoapod-support": "1.6.0",
   "cordova-plugin-device": "1.1.7",
   "cordova-plugin-ionic-webview": "1.2.1",
   "cordova-plugin-splashscreen": "4.1.0",
   "cordova-plugin-statusbar": "2.4.2",
-  "cordova-plugin-stripe": "1.5.3",
   "cordova-plugin-whitelist": "1.3.3",
-  "ionic-plugin-keyboard": "2.2.1"
+  "ionic-plugin-keyboard": "2.2.1",
+  "cordova-plugin-cocoapod-support": "1.6.0",
+  "cordova-plugin-stripe": "1.5.3"
 };
 // BOTTOM OF METADATA
 });

@@ -38,7 +38,6 @@ allprojects {
     repositories {
         mavenCentral();
         jcenter()
-        maven { url 'https://jitpack.io' }
     }
 }
 
@@ -260,9 +259,8 @@ dependencies {
     implementation fileTree(dir: 'libs', include: '*.jar')
     // SUB-PROJECT DEPENDENCIES START
     implementation(project(path: ":CordovaLib"))
-//    compile "com.stripe:stripe-android:4.1.2"
+    compile "com.stripe:stripe-android:8.1.0"
     // SUB-PROJECT DEPENDENCIES END
-    implementation 'com.github.bongloy:bongloy-android:-SNAPSHOT'
 }
 
 def promptForReleaseKeyPassword() {

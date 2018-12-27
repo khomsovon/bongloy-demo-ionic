@@ -1,28 +1,25 @@
 {
-  "_from": "cordova-plugin-stripe@^1.5.3",
+  "_from": "git+https://github.com/khomsovon/cordova-plugin-stripe.git",
   "_id": "cordova-plugin-stripe@1.5.3",
   "_inBundle": false,
-  "_integrity": "sha1-YqrltO8ND0Yh0OhJhlilW1EzQIw=",
+  "_integrity": "",
   "_location": "/cordova-plugin-stripe",
   "_phantomChildren": {},
   "_requested": {
-    "type": "range",
-    "registry": true,
-    "raw": "cordova-plugin-stripe@^1.5.3",
-    "name": "cordova-plugin-stripe",
-    "escapedName": "cordova-plugin-stripe",
-    "rawSpec": "^1.5.3",
-    "saveSpec": null,
-    "fetchSpec": "^1.5.3"
+    "type": "git",
+    "raw": "https://github.com/khomsovon/cordova-plugin-stripe.git",
+    "rawSpec": "https://github.com/khomsovon/cordova-plugin-stripe.git",
+    "saveSpec": "git+https://github.com/khomsovon/cordova-plugin-stripe.git",
+    "fetchSpec": "https://github.com/khomsovon/cordova-plugin-stripe.git",
+    "gitCommittish": null
   },
   "_requiredBy": [
     "#USER",
     "/"
   ],
-  "_resolved": "https://registry.npmjs.org/cordova-plugin-stripe/-/cordova-plugin-stripe-1.5.3.tgz",
-  "_shasum": "62aae5b4ef0d0f4621d0e8498658a55b5133408c",
-  "_spec": "cordova-plugin-stripe@^1.5.3",
-  "_where": "/Users/khomsovon/Documents/app/ionic-stripe",
+  "_resolved": "git+https://github.com/khomsovon/cordova-plugin-stripe.git#3c5fc5dc8954555118e35a75fd58a7a164c54830",
+  "_spec": "https://github.com/khomsovon/cordova-plugin-stripe.git",
+  "_where": "/Users/khomsovon/Documents/app/bongloy-demo-ionic",
   "author": {
     "name": "Ibby Hadeed",
     "email": "i.hadeed@zyra.ca"
@@ -39,6 +36,9 @@
       "browser"
     ]
   },
+  "dependencies": {
+    "@types/cordova": "~0.0.34"
+  },
   "deprecated": false,
   "description": "Cordova plugin that lets you use Stripe's Native SDKs for Android and iOS",
   "devDependencies": {
@@ -49,7 +49,8 @@
   "files": [
     "src",
     "www",
-    "plugin.xml"
+    "plugin.xml",
+    "typings/CordovaStripe.d.ts"
   ],
   "homepage": "https://github.com/ihadeed/cordova-plugin-stripe#readme",
   "keywords": [
@@ -71,5 +72,6 @@
     "docs": "jsdoc2md --template \"scripts/doc.template.md\" \"www/**/*.js\" > README.md",
     "jshint": "jshint www && jshint src && jshint tests"
   },
+  "typings": "./typings/CordovaStripe.d.ts",
   "version": "1.5.3"
 }

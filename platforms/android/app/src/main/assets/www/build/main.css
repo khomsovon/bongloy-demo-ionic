@@ -25674,35 +25674,35 @@ ion-navbar.toolbar {
   min-height: calc(46px + env(safe-area-inset-bottom));
 }
 
-page-home .toolbar-title-md img {
+page-charge .toolbar-title-md img {
   width: 36%;
 }
 
-page-home [disabled] {
+page-charge [disabled] {
   background-color: #e8e8e8ad !important;
 }
 
-page-home .toolbar-title-ios img {
+page-charge .toolbar-title-ios img {
   width: 55%;
 }
 
-page-home .jp-card {
+page-charge .jp-card {
   min-width: inherit !important;
 }
 
-page-home [width-68] {
+page-charge [width-68] {
   width: 68%;
 }
 
-page-home [width-30] {
+page-charge [width-30] {
   width: 30%;
 }
 
-page-home .form-group {
+page-charge .form-group {
   margin-bottom: 1rem;
 }
 
-page-home .form-control {
+page-charge .form-control {
   display: block;
   width: 100%;
   padding: .5rem .75rem;
@@ -25720,7 +25720,7 @@ page-home .form-control {
   transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s,-webkit-box-shadow ease-in-out .15s;
 }
 
-page-home .form-inline {
+page-charge .form-inline {
   padding: .5rem .75rem;
   font-size: 15px;
   line-height: 1.25;

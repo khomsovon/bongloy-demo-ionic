@@ -4,7 +4,7 @@
             "outputFile": "/Users/khomsovon/Documents/app/bongloy-demo-ionic/platforms/android/app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-v26/values-v26.xml",
             "map": [
                 {
-                    "source": "/Users/khomsovon/.gradle/caches/transforms-1/files-1.1/appcompat-v7-26.0.1.aar/9e2f0b349ea0ff27532b8080925cae29/res/values-v26/values-v26.xml",
+                    "source": "/Users/khomsovon/.gradle/caches/transforms-1/files-1.1/appcompat-v7-27.1.0.aar/22cff9668220d1b1e571b333c13324f6/res/values-v26/values-v26.xml",
                     "from": {
                         "startLines": "2,3,4,8,12,16",
                         "startColumns": "4,4,4,4,4,4",
@@ -23,7 +23,7 @@
                     }
                 },
                 {
-                    "source": "/Users/khomsovon/.gradle/caches/transforms-1/files-1.1/design-26.0.1.aar/206f6ddef5118cbb262e20e1ee8b9259/res/values-v26/values-v26.xml",
+                    "source": "/Users/khomsovon/.gradle/caches/transforms-1/files-1.1/design-27.1.0.aar/910e043009fd7d5153c0d8cebc6a1c18/res/values-v26/values-v26.xml",
                     "from": {
                         "startLines": "2,6",
                         "startColumns": "4,4",

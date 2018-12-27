@@ -7,9 +7,6 @@
     "files": {}
   },
   "installed_plugins": {
-    "cordova-plugin-cocoapod-support": {
-      "PACKAGE_NAME": "com.bongloy.ionic"
-    },
     "cordova-plugin-device": {
       "PACKAGE_NAME": "com.bongloy.ionic"
     },
@@ -32,5 +29,9 @@
       "PACKAGE_NAME": "com.bongloy.ionic"
     }
   },
-  "dependent_plugins": {}
+  "dependent_plugins": {
+    "cordova-plugin-cocoapod-support": {
+      "PACKAGE_NAME": "com.bongloy.ionic"
+    }
+  }
 }

@@ -4,7 +4,7 @@
             "outputFile": "/Users/khomsovon/Documents/app/bongloy-demo-ionic/platforms/android/app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-hdpi-v4/values-hdpi-v4.xml",
             "map": [
                 {
-                    "source": "/Users/khomsovon/.gradle/caches/transforms-1/files-1.1/appcompat-v7-26.0.1.aar/9e2f0b349ea0ff27532b8080925cae29/res/values-hdpi-v4/values-hdpi-v4.xml",
+                    "source": "/Users/khomsovon/.gradle/caches/transforms-1/files-1.1/appcompat-v7-27.1.0.aar/22cff9668220d1b1e571b333c13324f6/res/values-hdpi-v4/values-hdpi-v4.xml",
                     "from": {
                         "startLines": "2",
                         "startColumns": "4",

@@ -22,7 +22,7 @@
   "_resolved": "https://registry.npmjs.org/cordova-plugin-cocoapod-support/-/cordova-plugin-cocoapod-support-1.6.0.tgz",
   "_shasum": "cb32a771741411d83f9f83d249ac2eb742bd5f07",
   "_spec": "cordova-plugin-cocoapod-support",
-  "_where": "/Users/khomsovon/Documents/app/ionic-stripe",
+  "_where": "/Users/khomsovon/Documents/app/bongloy-demo-ionic",
   "bugs": {
     "url": "https://github.com/blakgeek/cordova-plugin-cocoapods-support/issues"
   },

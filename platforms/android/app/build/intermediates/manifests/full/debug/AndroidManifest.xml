@@ -52,10 +52,6 @@
             android:name="com.stripe.android.view.PaymentFlowActivity"
             android:theme="@style/StripeDefaultTheme" >
         </activity>
-
-        <meta-data
-            android:name="android.support.VERSION"
-            android:value="26.0.1" />
     </application>
 
 </manifest>

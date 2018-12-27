@@ -13,7 +13,7 @@
     
     if (self.client == nil) {
         // init client if doesn't exist
-        client = [[BongloyAPIClient alloc] init];
+        client = [[STPAPIClient alloc] init];
     } else {
         [self.client setPublishableKey:publishableKey];
     }
