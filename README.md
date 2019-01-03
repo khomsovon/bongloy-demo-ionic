@@ -2,7 +2,7 @@
 Bongloy-demo-ionic is a ionic app which demonstrates how to use Bongloy.
 
 ### Screenshots
-<img src="Screen/Demo.gif" width="300">
+<img src="screens/Demo.gif" width="300">
 
 ## Installation
 
