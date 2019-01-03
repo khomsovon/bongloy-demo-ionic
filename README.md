@@ -9,7 +9,7 @@ Bongloy-demo-ionic is a ionic app which demonstrates how to use Bongloy.
     $ git clone https://github.com/khomsovon/bongloy-demo-ionic.git
 
 ```sh
-$ cd bongloy-demo-ios
+$ cd bongloy-demo-ionic
 $ npm install
 $ ionic serve
 ```
