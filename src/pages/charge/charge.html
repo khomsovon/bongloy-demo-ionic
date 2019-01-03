@@ -35,6 +35,9 @@
         placeholder="Amount" [(ngModel)]="cardForm.amount" name="amount" card-amount/>
         <input width-30 class="form-inline" disabled type="text" value="USD">
       </div>
-    <button [disabled]="!form.valid" type="submit" ion-button outline color="secondary" block>Buy</button>
+      <button *ngIf="spinner == true" [disabled]="!form.valid" type="submit" ion-button outline color="secondary" block>Buy</button>
+      <button *ngIf="spinner == false" [disabled]="!form.valid" type="button" ion-button outline color="secondary" block>
+        <ion-spinner name="bubbles"></ion-spinner>
+      </button>
   </form>
 </ion-content>

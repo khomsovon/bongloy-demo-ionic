@@ -14,6 +14,7 @@ export class ChargePage {
 
   form: FormGroup;
   private publishableKey = 'pk_test_2411c55a75ad6d004eaaf240f99b577dec6d6630789c06a23639967ae3c10572';
+  public spinner:boolean = true;
 
   constructor(
     public navCtrl: NavController,
@@ -34,6 +35,7 @@ export class ChargePage {
   createCardToken(cardForm){
      this.stripe.setPublishableKey(this.publishableKey);
      let expiry = Payment.fns.cardExpiryVal(cardForm.expiry);
+     this.spinner = false;
      let card = {
        number: cardForm.number,
        expMonth: expiry.month,
@@ -45,9 +47,11 @@ export class ChargePage {
         this.charge.Charge(token.id, cardForm.amount)
           .subscribe(data => {
             this.message(data, 'success');
+            this.spinner = true;
           });
       }).catch(error => {
         this.message(error, 'error');
+        this.spinner = true;
       });
   }
 
@@ -55,17 +59,17 @@ export class ChargePage {
     Swal({
       type: messageType,
       width: 250,
-      title: this.messageText(messageType),
+      title: this.messageText(response, messageType),
       showConfirmButton: true,
       confirmButtonColor: '#3085d6'
     });
   }
 
-  messageText(type){
+  messageText(response, type){
     if(type == 'success'){
       return 'Payment successful!';
     }else{
-      return 'Payment unsuccessful!';
+      return 'Payment unsuccessful! error:' + response;
     }
   }
 }
