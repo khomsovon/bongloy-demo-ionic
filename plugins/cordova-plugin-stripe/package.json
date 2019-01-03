@@ -17,7 +17,7 @@
     "#USER",
     "/"
   ],
-  "_resolved": "git+https://github.com/khomsovon/cordova-plugin-stripe.git#3c5fc5dc8954555118e35a75fd58a7a164c54830",
+  "_resolved": "git+https://github.com/khomsovon/cordova-plugin-stripe.git#139cc34191d9c09b53d6bca20bebef12a30f04f1",
   "_spec": "https://github.com/khomsovon/cordova-plugin-stripe.git",
   "_where": "/Users/khomsovon/Documents/app/bongloy-demo-ionic",
   "author": {
