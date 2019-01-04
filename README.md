@@ -43,7 +43,7 @@ If you haven't already, install the latest version of [CocoaPods](https://guides
   ```
   Don't forget to use the .xcworkspace file to open your project in Xcode, instead of the .xcodeproj file, from here on out.
   ```sh
-    open Bongloy.xcworkspace
+  $ open Bongloy.xcworkspace
   ```
 ## Intergration
 1.  Install the Cordova and Ionic Native plugins:
